@@ -1,0 +1,119 @@
+:root {
+  /* CSS Variables for accessibility settings */
+  --font-scale: 1;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #1976d2;
+  --contrast-mode: normal;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color, #ffffff);
+  color: var(--text-color, #333333);
+}
+
+/* Apply font scaling to common text elements */
+h1, .MuiTypography-h1 {
+  font-size: calc(2.5rem * var(--font-scale)) !important;
+}
+
+h2, .MuiTypography-h2 {
+  font-size: calc(2rem * var(--font-scale)) !important;
+}
+
+h3, .MuiTypography-h3 {
+  font-size: calc(1.75rem * var(--font-scale)) !important;
+}
+
+h4, .MuiTypography-h4 {
+  font-size: calc(1.5rem * var(--font-scale)) !important;
+}
+
+h5, .MuiTypography-h5 {
+  font-size: calc(1.25rem * var(--font-scale)) !important;
+}
+
+h6, .MuiTypography-h6 {
+  font-size: calc(1rem * var(--font-scale)) !important;
+}
+
+p, a, button, input, textarea, select, li, span, .MuiTypography-body1, .MuiTypography-body2 {
+  font-size: calc(1rem * var(--font-scale)) !important;
+}
+
+small, .MuiTypography-caption {
+  font-size: calc(0.875rem * var(--font-scale)) !important;
+}
+
+/* High contrast mode overrides */
+[data-contrast-mode="high"] .MuiPaper-root {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+}
+
+[data-contrast-mode="high"] a {
+  color: #ffff00 !important;
+}
+
+[data-contrast-mode="high"] .MuiButton-contained {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+[data-contrast-mode="high"] .MuiButton-outlined {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Focus indicators for better keyboard navigation */
+:focus {
+  outline: 3px solid var(--link-color, #1976d2) !important;
+  outline-offset: 2px !important;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--link-color, #1976d2);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen reader only elements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Enhanced focus styles for interactive elements */
+button:focus, 
+a:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+  outline: 3px solid var(--link-color, #1976d2) !important;
+  outline-offset: 2px !important;
+} 
+ 
